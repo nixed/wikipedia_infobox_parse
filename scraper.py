@@ -108,7 +108,7 @@ def run(article_title):
     data = parse_infobox_text(get_infobox_from_text(article_text))
     return data
 
-for articletitle in articletitles:
+for article_title in article_titles:
     scraperwiki.sqlite.save(unique_keys=("Name",), data = run(article_title))
 
     
