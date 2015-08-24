@@ -66,6 +66,8 @@ def get_yaml_url(url):
     return data
 
 def parse_infobox_text(text):
+    if text is None:
+        return
     text = text.split('|')
     text = text[1:] #everything before the first pipe is the infobox declaration
     new_list = [text[0]]
