@@ -15,9 +15,8 @@ if len(sys.argv) > 2:
 else:
     box_title = None # if no infobox title is provided, program returns the first one on the page
 """
-article_title = "Brazil"
+article_titles = ["M16A1", "M16A2", "M4A1", "M16A4"]
 box_title = None
-
 
 #Build a regexp to get the source artery from the artery infobox
 exp = r'\{\{'                  # the opening brackets for the infobox 
@@ -109,6 +108,7 @@ def run(article_title):
     data = parse_infobox_text(get_infobox_from_text(article_text))
     return data
 
-scraperwiki.sqlite.save(unique_keys=("Name",), data = run(article_title))
+for articletitle in articletitles:
+    scraperwiki.sqlite.save(unique_keys=("Name",), data = run(article_title))
 
     
